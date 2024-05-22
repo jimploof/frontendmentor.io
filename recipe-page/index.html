@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Recipe page</title>
+  <style>
+    html {
+	  overflow-x: auto;
+	}
+	body {
+      background-color: #F3E5D7; /* Light peach background outside the container */
+      font-family: 'Outfit', sans-serif; /* Outfit font set as the default */
+      min-width: 376px;
+	  overflow-x: auto;
+    }
+	.hdr-lrg {
+	  color: #312E2C;
+	  font-size: 40px;	
+	}
+	.hdr-med {
+	  color: #854632;
+	  font-size: 28px;	
+	}
+	.hdr-sml {
+	  color: #7A284E;
+	  font-size: 20px;
+	}
+	.txt-regular {
+	  color: #5F564D;
+	  font-size: 16px;
+	  font-weight: normal;
+	}
+	.txt-bold {
+	  color: #5F564D;
+	  font-size: 16px;
+	  font-weight: bold;
+	}
+	.txt-bold-burgundy {
+	  color: #854632;
+	  font-size: 16px;
+	  font-weight: bold;
+	}
+    .container {
+      background-color: white; /* White background inside the container */
+      max-width: 736px; /* Maximum width of the container */
+      margin: 20px auto; /* Centering the container with auto margins and a bit of spacing from the viewport */
+      padding: 40px; /* Padding inside the container */
+      border-radius: 10px; /* Rounded corners of the container */
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for a layered look */
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px; /* Rounded corners for the image */
+      display: block; /* Ensures no extra space below the image */
+      margin: auto; /* Centers the image horizontally */
+    }
+
+    .prep-time {
+      color: rgb(122, 40, 78); 
+      background-color: rgba(122, 40, 78, .05); 
+	  padding: 5px;
+	  margin: 5px;
+	  border-radius: 10px;
+    }
+
+    .prep-time li::before {
+        color: rgb(122, 40, 78); /* Bullet color */
+     }
+
+    .num-color {
+      color: #854632;
+	  font-weight: bold;
+    }
+    .nutrition-grid {
+      display: grid;
+      /* grid-template-columns: auto auto;  Equal columns for label and value */
+	  grid-template-columns: 1fr 1fr; /* Makes each column take up an equal fraction of the available space */
+      min-width: 0; /* Helps prevent overflow */
+	  overflow: hidden; /* Adds overflow handling to see effect */
+     }
+
+    .nutrition-row:not(:last-child) {
+      border-bottom: 2px solid #ccc; /* Borders between rows but not at the last row */
+    }
+
+    .nutrition-label, .nutrition-value {
+      padding: 8px; /* Padding for grid cells */
+    }
+
+    .attribution { 
+      font-size: 11px; 
+      text-align: center; 
+      margin-top: 20px; /* Adds space above the attribution */
+    }
+
+    .attribution a { 
+      color: hsl(228, 45%, 44%); 
+    }
+	
+	.recipe-steps {
+	  list-style-type: decimal;
+	  padding-left: 2.5em;
+	}
+
+	.recipe-step {
+	  color: #5F564D;
+	}
+
+	.bold-text {
+	  color: green;
+	  font-weight: bold;
+	}
+
+	.recipe-step::marker {
+	  color: #854632;
+	  font-weight: bold;
+	  padding-left: 5px;
+	}
+	.horizontal-line {
+		border-bottom: 2px solid; /* Creates a horizontal line */
+		height: 3px; /* Minimal height to maintain the border */
+		width: 100%; /* Full width of the container */
+		margin-top: 10px; /* Adds vertical space above and below the line */
+		color: #E3DDD7;
+	}
+	.indent-15 {
+		padding-left: 15px; /* Indents the text by 15px */
+	}
+    @media (max-width: 377px) {
+      .container {
+        padding: 0; /* Removes padding when the screen width is less than 376px */
+        background-color: white; /* Ensures background is white */
+      }
+      body {
+        background-color: white; /* Changes the background color of the body to white */
+      }
+	  img {
+	    border-radius: 0px;
+	  }
+    }	
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="assets/images/image-omelette.jpeg" alt="Omelette">
+    <h1 class="hdr-lrg">Simple Omelette Recipe</h1>
+    <p>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
+    to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
+    <div class="prep-time">
+      <h3 class="hdr-sml indent-15">Preparation time</h3>
+      <ul>
+        <li><span class="txt-bold">Total:</span> <span class="txt-regular">Approximately 10 minutes</span></li>
+        <li><span class="txt-bold">Preparation:</span> <span class="txt-regular">5 minutes</span></li>
+        <li><span class="txt-bold">Cooking:</span> <span class="txt-regular">5 minutes</span></li>
+      </ul>
+    </div>
+    <h2 class="hdr-med">Ingredients</h2>
+    <ul>
+      <li class="recipe-step">2-3 large eggs</li>
+      <li class="recipe-step">Salt, to taste</li>
+      <li class="recipe-step">Pepper, to taste</li>
+      <li class="recipe-step">1 tablespoon of butter or oil</li>
+      <li class="recipe-step">Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+    </ul>
+    <div class="horizontal-line"></div>
+    <h2 class="hdr-med">Instructions</h2>
+	<ol class="recipe-steps">
+	  <li class="recipe-step"><span class="txt-bold">Beat the eggs:</span> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.</li>
+	  <li class="recipe-step"><span class="txt-bold">Heat the pan:</span> Place a non-stick frying pan over medium heat and add butter or oil.</li>
+	  <li class="recipe-step"><span class="txt-bold">Cook the omelette:</span> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.</li>
+	  <li class="recipe-step"><span class="txt-bold">Add fillings (optional):</span> When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.</li>
+	  <li class="recipe-step"><span class="txt-bold">Fold and serve:</span> As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.</li>
+	  <li class="recipe-step"><span class="txt-bold">Enjoy:</span> Serve hot, with additional salt and pepper if needed.</li>
+	</ol>	
+    <div class="horizontal-line"></div>
+	<h1 class="hdr-med">Nutrition</h1>
+	<p>The table below shows nutritional values per serving without the additional fillings.</p>
+	<div class="nutrition-grid">
+		<div class="nutrition-label nutrition-row txt-regular indent-15">Calories</div>
+		<div class="nutrition-value nutrition-row txt-bold-burgundy">277kcal</div>
+		<div class="nutrition-label nutrition-row txt-regular indent-15">Carbs</div>
+		<div class="nutrition-value nutrition-row txt-bold-burgundy">0g</div>
+		<div class="nutrition-label nutrition-row txt-regular indent-15">Protein</div>
+		<div class="nutrition-value nutrition-row txt-bold-burgundy">20g</div>
+		<div class="nutrition-label txt-regular indent-15">Fat</div>
+		<div class="nutrition-value txt-bold-burgundy">22g</div>
+	</div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Jim Ploof</a>.
+  </div>
+  
+</body>
+</html>
